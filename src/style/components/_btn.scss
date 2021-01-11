@@ -1,0 +1,38 @@
+.btn {
+  background: $color-gray-dark;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.25rem;
+  height: 5.5rem;
+  color: $color-white;
+  width: 5.5rem;
+  transition: filter 0.3s ease-in;
+  outline: none;
+  border: none;
+}
+  
+.btn:active,
+.btn:focus {
+  filter: brightness(120%);
+}
+  
+.btn.zero {
+  outline: none;
+  width: 12.5rem;
+  grid-column: 1 / span 2;
+  border-radius: 5.5rem;
+  position: relative;
+  justify-content: flex-start;
+  padding-left: 2.2rem;
+}
+  
+.btn.light {
+  background: $color-gray-light;
+}
+  
+.btn.orange {
+  background: $color-orange;
+}

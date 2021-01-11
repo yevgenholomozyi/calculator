@@ -1,0 +1,17 @@
+.bottom {
+  width: 13.5rem;
+  height: .5rem;
+  background-color: $color-white;
+  bottom: 1rem;
+  border-radius: 6px;
+  position: absolute;
+  left: 50%;
+  top: 97%;
+  transform: translateX(-50%);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: .5rem;
+}

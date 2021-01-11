@@ -6,7 +6,7 @@ const Top: React.FC<{}> = () => {
   return (
     <div className='top'>
       <Clock />
-      <Image />     
+      <Image />
     </div>
   );
 }

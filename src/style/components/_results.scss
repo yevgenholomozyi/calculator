@@ -1,14 +1,22 @@
 .results {
-  font-weight: 300;
   margin-bottom: 1rem;
   text-align: right;
-  font-size: 6.5rem;
+  font-size: 6rem;
+  font-weight: 200;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
 
   &__memory {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+}
+
+.results__current-operation {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 1.7rem;
 }

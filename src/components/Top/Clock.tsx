@@ -6,7 +6,7 @@ const Clock: React.FC<{}> = () => {
 
   useEffect(() => {
     const timerID = setInterval( () => setTime(new Date()), 1000 );
-    return function cleanup() {
+    return function cleanup():void {
         clearInterval(timerID);
       };
    });

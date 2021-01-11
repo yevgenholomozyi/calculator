@@ -33,7 +33,16 @@ const Calculator: React.FC<{}> = () => {
     isNew: false,
   };
   
-  const [{ memory, value }, dispatch] = useReducer(inputReducer, initialArgs);
+  const [{ memory, value, operator, storage, isNew }, dispatch] = useReducer(inputReducer, initialArgs);
+
+  const currentOperation = (): string => { // function to show an operation above the result tableu
+    if (operator && +storage && +value && !isNew) {
+      return `${replaceDot(storage)} ${operator} ${replaceDot(value)}`
+    }
+    return ' ';
+  };
+
+  const acContent:string = +value ? 'C' : 'AC';
 
   const onButtonClick = (value: String, figure?: string) => {
     switch (value) {
@@ -96,9 +105,11 @@ const Calculator: React.FC<{}> = () => {
 
   return (
     <Fragment>
-      <Results memory={+memory ? memory : ''}> {replaceDot(value)} </Results>
+      <Results
+        currentOperation={currentOperation()}
+        memory={+memory ? memory : ''}> {replaceDot(value)} </Results>
       <div className="buttons">
-        <Button value='AC' onButtonClick={() => onButtonClick(AC)} isLight />
+        <Button value={acContent} onButtonClick={() => onButtonClick(AC)} isLight />
         <Button value={'+/-'} isLight onButtonClick={() => onButtonClick(PLUS_MINUS)} />
         <Button value={'%'} isLight onButtonClick={() => onButtonClick(PERCENT)} />
         <Button value={'÷'} isOrange onButtonClick={() => onButtonClick(DIVIDE)} />
